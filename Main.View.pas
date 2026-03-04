@@ -133,7 +133,7 @@ begin
   if dlgOpen.Execute then
   begin
     edtPdfPath.Text := dlgOpen.FileName;
-    edtOutputPath.Text := (cPages_OutputFolder);
+    edtOutputPath.Text := TPath.Combine(TPath.GetDirectoryName(dlgOpen.FileName), cPages_OutputFolder);
   end;
 end;
 
