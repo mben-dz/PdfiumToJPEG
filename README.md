@@ -87,7 +87,7 @@ The app depends on Google's [PDFium](https://pdfium.googlesource.com/pdfium/) li
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/PdfToJPEG.git
+   git clone https://github.com/mben-dz/PdfiumToJPEG.git
    ```
 2. Open `PdfToJPEG.dproj` in Delphi
 3. Build and run (`F9`)
