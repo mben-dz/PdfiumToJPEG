@@ -1,0 +1,152 @@
+object MainView: TMainView
+  Left = 0
+  Top = 0
+  Caption = 'PDF to JPEG Converter'
+  ClientHeight = 600
+  ClientWidth = 800
+  Position = DesktopCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object LayoutTop: TLayout
+    Align = Top
+    Size.Width = 800.000000000000000000
+    Size.Height = 143.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object lblPdf: TLabel
+      Position.X = 16.000000000000000000
+      Position.Y = 16.000000000000000000
+      Text = 'PDF File:'
+    end
+    object edtPdfPath: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 1
+      Position.X = 16.000000000000000000
+      Position.Y = 36.000000000000000000
+      Size.Width = 600.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object btnBrowsePdf: TButton
+      Position.X = 624.000000000000000000
+      Position.Y = 36.000000000000000000
+      Size.Width = 40.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = '...'
+      TextSettings.Trimming = None
+      OnClick = btnBrowsePdfClick
+    end
+    object lblOutput: TLabel
+      Position.X = 16.000000000000000000
+      Position.Y = 64.000000000000000000
+      Text = 'Output Folder:'
+    end
+    object edtOutputPath: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 3
+      Position.X = 16.000000000000000000
+      Position.Y = 84.000000000000000000
+      Size.Width = 600.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object BtnConvert: TButton
+      Position.X = 672.000000000000000000
+      Position.Y = 36.000000000000000000
+      Size.Width = 112.000000000000000000
+      Size.Height = 70.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      Text = 'Convert to JPEG'
+      TextSettings.Trimming = None
+      OnClick = BtnConvertClick
+    end
+    object pbProgress: TProgressBar
+      Align = Bottom
+      Orientation = Horizontal
+      Position.Y = 133.000000000000000000
+      Size.Width = 800.000000000000000000
+      Size.Height = 10.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object lblProgress: TLabel
+      Position.X = 6.000000000000000000
+      Position.Y = 114.000000000000000000
+      Text = 'Ready'
+    end
+  end
+  object TabControl1: TTabControl
+    Align = Client
+    Size.Width = 800.000000000000000000
+    Size.Height = 457.000000000000000000
+    Size.PlatformDefault = False
+    TabIndex = 1
+    TabOrder = 1
+    TabPosition = Top
+    Sizes = (
+      800s
+      431s
+      800s
+      431s)
+    object TabPreview: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = False
+      Size.Width = 61.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Preview'
+      ExplicitSize.cx = 50.000000000000000000
+      ExplicitSize.cy = 50.000000000000000000
+      object FlowLayout: TFlowLayout
+        Align = Client
+        Size.Width = 800.000000000000000000
+        Size.Height = 431.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Justify = Left
+        JustifyLastLine = Left
+        FlowDirection = LeftToRight
+      end
+    end
+    object TabHistory: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = True
+      Size.Width = 58.000000000000000000
+      Size.Height = 26.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'History'
+      ExplicitSize.cx = 50.000000000000000000
+      ExplicitSize.cy = 50.000000000000000000
+      object StrGrid: TStringGrid
+        Align = Client
+        CanFocus = True
+        ClipChildren = True
+        Size.Width = 800.000000000000000000
+        Size.Height = 431.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Viewport.Width = 796.000000000000000000
+        Viewport.Height = 406.000000000000000000
+      end
+    end
+  end
+  object dlgOpen: TOpenDialog
+    Left = 320
+    Top = 32
+  end
+end
